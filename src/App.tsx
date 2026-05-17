@@ -1,12 +1,15 @@
-import "./App.css";
+import { RouterProvider } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
+import { router } from './router';
+import './App.css';
 
 function App() {
-
   return (
     <>
-      <h6 className="font-medium">Hello Kasun Thilina</h6>
+      <RouterProvider router={router} />
+      <Analytics />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

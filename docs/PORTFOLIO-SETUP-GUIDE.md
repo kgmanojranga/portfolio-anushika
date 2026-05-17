@@ -4,7 +4,7 @@ This guide provides step-by-step instructions to create a portfolio website usin
 
 ## Source Project
 
-This template is based on the **portfolio-kasunthilina** project structure. The architecture has been tested and proven in production, providing a solid foundation for building professional portfolio websites.
+This template is based on the **portfolio-anushikanayomi** project structure. The architecture has been tested and proven in production, providing a solid foundation for building professional portfolio websites.
 
 **Package Manager:** Yarn
 **Hosting Platform:** Vercel
