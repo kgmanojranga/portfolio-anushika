@@ -8,7 +8,6 @@ const AboutPage = () => {
     <div className="py-16 md:py-24">
       <Container size="md">
         <div className="flex flex-col gap-16">
-
           {/* ── Who I Am ── */}
           <div className="flex flex-col gap-6">
             <h1 className="text-4xl md:text-5xl font-bold text-black tracking-tight">
@@ -31,8 +30,8 @@ const AboutPage = () => {
               </p>
               <p>
                 Outside of work, I'm a certified English instructor, a published
-                researcher in environmental GIS analysis, and an associate member
-                of the Institute of Engineers Sri Lanka.
+                researcher in environmental GIS analysis, and an associate
+                member of the Institute of Engineers Sri Lanka.
               </p>
             </div>
           </div>
@@ -45,11 +44,15 @@ const AboutPage = () => {
             <div className="flex flex-col gap-5">
               {education.map(edu => (
                 <div key={edu.degree} className="flex flex-col gap-1">
-                  <h3 className="text-sm font-semibold text-black leading-snug">{edu.degree}</h3>
+                  <h3 className="text-sm font-semibold text-black leading-snug">
+                    {edu.degree}
+                  </h3>
                   <p className="text-sm text-neutral-500">{edu.institution}</p>
                   <p className="text-xs text-neutral-400">{edu.period}</p>
                   {edu.details && (
-                    <p className="text-xs text-neutral-400 mt-0.5">{edu.details}</p>
+                    <p className="text-xs text-neutral-400 mt-0.5">
+                      {edu.details}
+                    </p>
                   )}
                 </div>
               ))}
@@ -67,7 +70,9 @@ const AboutPage = () => {
                   key={cert.title}
                   className="py-3 first:pt-0 last:pb-0 flex flex-col gap-0.5"
                 >
-                  <p className="text-sm font-medium text-black leading-snug">{cert.title}</p>
+                  <p className="text-sm font-medium text-black leading-snug">
+                    {cert.title}
+                  </p>
                   <p className="text-xs text-neutral-400">{cert.issuer}</p>
                 </div>
               ))}
@@ -81,14 +86,16 @@ const AboutPage = () => {
             </p>
             <div className="flex flex-col gap-3">
               {memberships.map(m => (
-                <div key={m} className="flex gap-3 items-start text-sm text-neutral-600">
+                <div
+                  key={m}
+                  className="flex gap-3 items-start text-sm text-neutral-600"
+                >
                   <span className="mt-1.5 w-1 h-1 rounded-full bg-neutral-400 shrink-0" />
                   {m}
                 </div>
               ))}
             </div>
           </div>
-
         </div>
       </Container>
     </div>
