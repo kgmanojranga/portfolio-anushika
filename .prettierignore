@@ -15,6 +15,9 @@ build
 .env.test.local
 .env.production.local
 
+# Markdown
+*.md
+
 # Generated files
 yarn.lock
 package-lock.json
