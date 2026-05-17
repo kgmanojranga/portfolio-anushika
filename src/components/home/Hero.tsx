@@ -23,7 +23,7 @@ const Hero = ({ personal }: HeroProps) => {
             </p>
           </div>
 
-          <p className="text-base text-neutral-600 leading-relaxed max-w-xl">
+          <p className="text-sm text-neutral-600 leading-relaxed max-w-xl">
             {personal.bio}
           </p>
 
