@@ -31,7 +31,7 @@ export const profile: ProfileData = {
     {
       title: 'Project Management',
       description:
-        'End-to-end agile project delivery — sprint planning, backlog grooming, stakeholder reporting, and cross-functional team coordination.',
+        'Bridging strategy, execution, and team coordination to turn ideas into delivered outcomes. With versatile experience across project management, operations, web development, and engineering, I focus on creating structure, improving workflows, and aligning teams toward business goals.',
     },
     {
       title: 'Operations & Administration',
