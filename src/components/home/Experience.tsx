@@ -37,13 +37,13 @@ const Experience = ({ experience }: ExperienceProps) => {
           root: container,
           // fire when 60% of the card is visible inside the container
           threshold: 0.6,
-        },
+        }
       );
       obs.observe(card);
       observers.push(obs);
     });
 
-    return () => observers.forEach((o) => o.disconnect());
+    return () => observers.forEach(o => o.disconnect());
   }, [experience]);
 
   // Intercept wheel events: consume them for inner scroll, pass through only at boundaries
@@ -53,7 +53,9 @@ const Experience = ({ experience }: ExperienceProps) => {
 
     const atTop = container.scrollTop === 0;
     const atBottom =
-      Math.abs(container.scrollTop + container.clientHeight - container.scrollHeight) < 1;
+      Math.abs(
+        container.scrollTop + container.clientHeight - container.scrollHeight
+      ) < 1;
 
     const scrollingDown = e.deltaY > 0;
     const scrollingUp = e.deltaY < 0;
@@ -91,7 +93,6 @@ const Experience = ({ experience }: ExperienceProps) => {
       </h2>
 
       <div className="flex gap-8" style={{ height: CARD_HEIGHT + PEEK }}>
-
         {/* ── Timeline ── */}
         <div className="relative flex flex-col w-28 shrink-0 py-1">
           {/* track */}
@@ -144,7 +145,9 @@ const Experience = ({ experience }: ExperienceProps) => {
             return (
               <div
                 key={`${job.company}-${job.period}`}
-                ref={(el) => { cardRefs.current[i] = el; }}
+                ref={el => {
+                  cardRefs.current[i] = el;
+                }}
                 style={{
                   height: CARD_HEIGHT,
                   scrollSnapAlign: 'start',
@@ -164,9 +167,13 @@ const Experience = ({ experience }: ExperienceProps) => {
                         ? `scale(0.97) translateY(${PEEK / 2}px)`
                         : 'scale(0.95) translateY(0)',
                     transformOrigin: 'top center',
-                    borderColor: isActive ? 'rgb(212 212 212)' : 'rgb(245 245 245)',
+                    borderColor: isActive
+                      ? 'rgb(212 212 212)'
+                      : 'rgb(245 245 245)',
                     backgroundColor: isActive ? 'white' : 'rgb(250 250 250)',
-                    boxShadow: isActive ? '0 1px 4px 0 rgb(0 0 0 / 0.06)' : 'none',
+                    boxShadow: isActive
+                      ? '0 1px 4px 0 rgb(0 0 0 / 0.06)'
+                      : 'none',
                     pointerEvents: isActive ? 'auto' : 'none',
                   }}
                 >
@@ -184,16 +191,22 @@ const Experience = ({ experience }: ExperienceProps) => {
                   </div>
 
                   <div className="flex flex-col gap-0.5">
-                    <h3 className="text-sm font-semibold text-black leading-snug">{job.role}</h3>
-                    <p className="text-xs text-neutral-500">{job.company} · {job.location}</p>
+                    <h3 className="text-sm font-semibold text-black leading-snug">
+                      {job.role}
+                    </h3>
+                    <p className="text-xs text-neutral-500">
+                      {job.company} · {job.location}
+                    </p>
                     <p className="text-xs text-neutral-400">{job.period}</p>
                   </div>
 
-                  <p className="text-sm text-neutral-500 leading-relaxed">{job.description}</p>
+                  <p className="text-sm text-neutral-500 leading-relaxed">
+                    {job.description}
+                  </p>
 
                   {job.tools && job.tools.length > 0 && (
                     <div className="flex flex-wrap gap-1.5 mt-auto pt-1">
-                      {job.tools.map((tool) => (
+                      {job.tools.map(tool => (
                         <span
                           key={tool}
                           className="text-xs text-neutral-500 bg-neutral-100 rounded px-2 py-0.5"

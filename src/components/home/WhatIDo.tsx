@@ -15,7 +15,7 @@ const WhatIDo = ({ focusAreas }: WhatIDoProps) => {
           What I Do
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {focusAreas.map((area) => (
+          {focusAreas.map(area => (
             <div
               key={area.title}
               className="border border-neutral-200 rounded-lg p-5 flex flex-col gap-3 hover:border-neutral-400 transition-colors"
@@ -26,9 +26,13 @@ const WhatIDo = ({ focusAreas }: WhatIDoProps) => {
                 </span>
               </div>
               <div className="flex flex-col gap-0.5">
-                <h3 className="text-sm font-semibold text-black">{area.title}</h3>
+                <h3 className="text-sm font-semibold text-black">
+                  {area.title}
+                </h3>
               </div>
-              <p className="text-sm text-neutral-500 leading-relaxed">{area.description}</p>
+              <p className="text-sm text-neutral-500 leading-relaxed">
+                {area.description}
+              </p>
             </div>
           ))}
         </div>

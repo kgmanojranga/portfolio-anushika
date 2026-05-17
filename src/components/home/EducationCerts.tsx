@@ -15,13 +15,17 @@ const EducationCerts = ({ education, certifications }: EducationCertsProps) => {
             Education
           </h2>
           <div className="flex flex-col gap-5">
-            {education.map((edu) => (
+            {education.map(edu => (
               <div key={edu.degree} className="flex flex-col gap-1">
-                <h3 className="text-sm font-semibold text-black leading-snug">{edu.degree}</h3>
+                <h3 className="text-sm font-semibold text-black leading-snug">
+                  {edu.degree}
+                </h3>
                 <p className="text-sm text-neutral-500">{edu.institution}</p>
                 <p className="text-xs text-neutral-400">{edu.period}</p>
                 {edu.details && (
-                  <p className="text-xs text-neutral-400 mt-0.5">{edu.details}</p>
+                  <p className="text-xs text-neutral-400 mt-0.5">
+                    {edu.details}
+                  </p>
                 )}
               </div>
             ))}
@@ -34,9 +38,14 @@ const EducationCerts = ({ education, certifications }: EducationCertsProps) => {
             Certifications
           </h2>
           <div className="flex flex-col divide-y divide-neutral-100">
-            {certifications.map((cert) => (
-              <div key={cert.title} className="py-3 first:pt-0 last:pb-0 flex flex-col gap-0.5">
-                <p className="text-sm font-medium text-black leading-snug">{cert.title}</p>
+            {certifications.map(cert => (
+              <div
+                key={cert.title}
+                className="py-3 first:pt-0 last:pb-0 flex flex-col gap-0.5"
+              >
+                <p className="text-sm font-medium text-black leading-snug">
+                  {cert.title}
+                </p>
                 <p className="text-xs text-neutral-400">{cert.issuer}</p>
               </div>
             ))}

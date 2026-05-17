@@ -18,9 +18,11 @@ This portfolio template uses a modern, production-ready technology stack focused
 ### Core Technologies
 
 #### 1. **React 19.2.0**
+
 - **Purpose**: UI library for building interactive user interfaces
 - **Why**: Latest version with improved performance, concurrent features, and better TypeScript support
 - **Implementation**:
+
   ```typescript
   // Functional components with hooks
   import { useState, useEffect } from 'react';
@@ -32,9 +34,11 @@ This portfolio template uses a modern, production-ready technology stack focused
   ```
 
 #### 2. **TypeScript 5.9.3**
+
 - **Purpose**: Static type checking for JavaScript
 - **Why**: Catches errors during development, provides excellent IDE support, and improves code maintainability
 - **Implementation**:
+
   ```typescript
   // Type-safe props and interfaces
   interface ComponentProps {
@@ -47,25 +51,29 @@ This portfolio template uses a modern, production-ready technology stack focused
     return <div>{title}: {count}</div>;
   };
   ```
+
 - **Configuration**: Three config files for different contexts
-    - `tsconfig.json` - Base configuration
-    - `tsconfig.app.json` - Application source code
-    - `tsconfig.node.json` - Build tools (Vite config)
+  - `tsconfig.json` - Base configuration
+  - `tsconfig.app.json` - Application source code
+  - `tsconfig.node.json` - Build tools (Vite config)
 
 #### 3. **Vite 7.2.4**
+
 - **Purpose**: Next-generation frontend build tool
 - **Why**: Lightning-fast HMR (Hot Module Replacement), optimized production builds, native ES modules support
 - **Features**:
-    - Instant server start
-    - Fast Hot Module Replacement (HMR)
-    - Optimized production builds with Rollup
-    - Built-in TypeScript support
+  - Instant server start
+  - Fast Hot Module Replacement (HMR)
+  - Optimized production builds with Rollup
+  - Built-in TypeScript support
 - **Implementation**: Configured via `vite.config.ts` with path aliases and React plugin
 
 #### 4. **React Router DOM 7.11.0**
+
 - **Purpose**: Client-side routing for React applications
 - **Why**: Declarative routing, nested routes, data loading, and excellent TypeScript support
 - **Implementation**:
+
   ```typescript
   // createBrowserRouter for data router APIs
   import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -89,6 +97,7 @@ This portfolio template uses a modern, production-ready technology stack focused
 ### Styling & Design
 
 #### 5. **Tailwind CSS 4.1.18**
+
 - **Purpose**: Utility-first CSS framework
 - **Why**: Rapid UI development, consistent design system, automatic purging of unused styles
 - **Implementation**:
@@ -101,18 +110,20 @@ This portfolio template uses a modern, production-ready technology stack focused
   </div>
   ```
 - **Features Used**:
-    - Custom color palettes in config
-    - Dark mode support with `dark:` prefix
-    - Custom animations and keyframes
-    - Responsive design with breakpoints (`sm:`, `md:`, `lg:`, `xl:`)
-    - Custom font families
+  - Custom color palettes in config
+  - Dark mode support with `dark:` prefix
+  - Custom animations and keyframes
+  - Responsive design with breakpoints (`sm:`, `md:`, `lg:`, `xl:`)
+  - Custom font families
 
 #### 6. **@tailwindcss/postcss 4.1.18**
+
 - **Purpose**: PostCSS plugin for Tailwind CSS v4
 - **Why**: Process Tailwind utilities at build time
 - **Implementation**: Configured via `postcss.config.js`
 
 #### 7. **Autoprefixer 10.4.23**
+
 - **Purpose**: Adds vendor prefixes to CSS automatically
 - **Why**: Ensures cross-browser compatibility without manual prefixing
 - **Implementation**: Works automatically with PostCSS
@@ -120,9 +131,11 @@ This portfolio template uses a modern, production-ready technology stack focused
 ### Analytics & Monitoring
 
 #### 8. **@vercel/analytics 1.6.1**
+
 - **Purpose**: Web analytics for Vercel deployments
 - **Why**: Privacy-friendly, lightweight, and provides insights into visitor behavior
 - **Implementation**:
+
   ```typescript
   import { Analytics } from '@vercel/analytics/react';
 
@@ -139,18 +152,20 @@ This portfolio template uses a modern, production-ready technology stack focused
 ### Development Tools
 
 #### 9. **ESLint 9.39.1**
+
 - **Purpose**: JavaScript/TypeScript linter
 - **Why**: Enforces code quality and consistency
 - **Plugins Used**:
-    - `@eslint/js` - Core ESLint rules
-    - `typescript-eslint` 8.46.4 - TypeScript-specific linting
-    - `eslint-plugin-react-hooks` 7.0.1 - React Hooks rules
-    - `eslint-plugin-react-refresh` 0.4.24 - React Fast Refresh rules
-    - `eslint-plugin-prettier` 5.5.4 - Prettier integration
-    - `eslint-config-prettier` 10.1.8 - Disable conflicting ESLint rules
+  - `@eslint/js` - Core ESLint rules
+  - `typescript-eslint` 8.46.4 - TypeScript-specific linting
+  - `eslint-plugin-react-hooks` 7.0.1 - React Hooks rules
+  - `eslint-plugin-react-refresh` 0.4.24 - React Fast Refresh rules
+  - `eslint-plugin-prettier` 5.5.4 - Prettier integration
+  - `eslint-config-prettier` 10.1.8 - Disable conflicting ESLint rules
 - **Implementation**: `eslint.config.js` with flat config format
 
 #### 10. **Prettier 3.7.4**
+
 - **Purpose**: Opinionated code formatter
 - **Why**: Consistent code style across the project
 - **Formats**: TypeScript, JavaScript, JSON, CSS, HTML
@@ -165,12 +180,14 @@ This portfolio template uses a modern, production-ready technology stack focused
   ```
 
 #### 11. **@types/node 24.10.1**
+
 - **Purpose**: TypeScript definitions for Node.js
 - **Why**: Enables path module usage in Vite config with full type safety
 
 ### Build & Bundle
 
 #### 12. **PostCSS 8.5.6**
+
 - **Purpose**: Tool for transforming CSS with JavaScript
 - **Why**: Powers Tailwind CSS processing
 - **Implementation**: Configured via `postcss.config.js`
@@ -214,6 +231,7 @@ This portfolio template uses a modern, production-ready technology stack focused
 ### Key Implementation Patterns
 
 #### Component Structure
+
 ```typescript
 // TypeScript interface for props
 interface ComponentProps {
@@ -243,6 +261,7 @@ const Component: React.FC<ComponentProps> = ({ title, items }) => {
 ```
 
 #### Routing Pattern
+
 ```typescript
 // Centralized route definitions
 export const ROUTES = {
@@ -257,6 +276,7 @@ import { ROUTES } from './routes';
 ```
 
 #### Styling Pattern
+
 ```css
 /* Global styles with custom fonts */
 @font-face {
@@ -279,15 +299,24 @@ import { ROUTES } from './routes';
 ```
 
 #### Data Management Pattern
+
 ```typescript
 // Centralized data with TypeScript types
 import type { PortfolioData } from '../types';
 
 const portfolioData: PortfolioData = {
-  about: { /* ... */ },
-  skills: [ /* ... */ ],
-  experience: [ /* ... */ ],
-  projects: [ /* ... */ ],
+  about: {
+    /* ... */
+  },
+  skills: [
+    /* ... */
+  ],
+  experience: [
+    /* ... */
+  ],
+  projects: [
+    /* ... */
+  ],
 };
 
 export default portfolioData;
@@ -295,14 +324,14 @@ export default portfolioData;
 
 ### Version Requirements
 
-| Package | Version | Notes |
-|---------|---------|-------|
-| Node.js | ≥ 18.0.0 | Required for Vite 7 |
-| Yarn | ≥ 1.22.0 | Package manager |
-| React | 19.2.0 | Latest stable |
-| TypeScript | ~5.9.3 | Locked minor version |
-| Vite | ^7.2.4 | Latest major |
-| Tailwind | ^4.1.18 | v4 with new features |
+| Package    | Version  | Notes                |
+| ---------- | -------- | -------------------- |
+| Node.js    | ≥ 18.0.0 | Required for Vite 7  |
+| Yarn       | ≥ 1.22.0 | Package manager      |
+| React      | 19.2.0   | Latest stable        |
+| TypeScript | ~5.9.3   | Locked minor version |
+| Vite       | ^7.2.4   | Latest major         |
+| Tailwind   | ^4.1.18  | v4 with new features |
 
 ### Browser Support
 
@@ -748,7 +777,11 @@ export default ThemeToggle;
 }
 
 body {
-  font-family: 'YourFontName', system-ui, -apple-system, sans-serif;
+  font-family:
+    'YourFontName',
+    system-ui,
+    -apple-system,
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -944,10 +977,7 @@ const portfolioData: PortfolioData = {
       period: 'Month Year - Month Year',
       category: 'fullstack',
       technologies: ['React', 'TypeScript', 'Node.js'],
-      achievements: [
-        'Achievement 1',
-        'Achievement 2',
-      ],
+      achievements: ['Achievement 1', 'Achievement 2'],
       featured: true,
     },
     // Add more projects
@@ -1311,6 +1341,7 @@ createRoot(document.getElementById('root')!).render(
 4. **Semantic Colors**: Success, error, warning, info
 
 ### Recommended Tools:
+
 - [Tailwind Color Generator](https://uicolors.app/create)
 - [Coolors](https://coolors.co/)
 - [Adobe Color](https://color.adobe.com/)
@@ -1551,6 +1582,7 @@ yarn deploy:prod
 #### Environment Variables (if needed)
 
 Add environment variables in Vercel Dashboard:
+
 - Go to Project Settings > Environment Variables
 - Add variables like `VITE_API_URL`, `VITE_ANALYTICS_ID`, etc.
 
