@@ -19,6 +19,12 @@ export interface FocusArea {
   description: string;
 }
 
+export interface CompanyProject {
+  name: string;
+  description: string;
+  tags?: string[];
+}
+
 export interface WorkExperience {
   role: string;
   company: string;
@@ -28,6 +34,7 @@ export interface WorkExperience {
   description: string;
   highlights: string[];
   tools?: string[];
+  projects?: CompanyProject[];
 }
 
 export interface Education {

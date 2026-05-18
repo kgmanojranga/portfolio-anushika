@@ -76,6 +76,44 @@ export const profile: ProfileData = {
         'Apollo',
         'LinkedIn',
       ],
+      projects: [
+        {
+          name: 'Wandrlust',
+          description:
+            'Led end-to-end agile delivery across 7 sprints for a travel mobile app, managing a team of 8–10 and shipping an App Store-ready product.',
+          tags: ['Mobile', 'Agile', 'iOS'],
+        },
+        {
+          name: 'Draftable',
+          description:
+            'Coordinated sprint cycles and maintained structured Jira dashboards for this document comparison SaaS product.',
+          tags: ['SaaS', 'Jira', 'Sprint Management'],
+        },
+        {
+          name: 'HeyStream',
+          description:
+            'Managed delivery coordination and cross-team reporting for a live streaming platform project.',
+          tags: ['Streaming', 'Operations'],
+        },
+        {
+          name: 'Graffiti',
+          description:
+            'Oversaw project tracking and sprint reporting for a creative content platform.',
+          tags: ['Content', 'Coordination'],
+        },
+        {
+          name: 'Staryo',
+          description:
+            'Drafted user stories, identified and logged bugs, and managed payment disputes for this platform.',
+          tags: ['QA', 'Stripe', 'User Stories'],
+        },
+        {
+          name: 'Shop Assist',
+          description:
+            'Conducted competitor research and market analysis to support CTO-led product initiatives.',
+          tags: ['Research', 'Market Analysis'],
+        },
+      ],
     },
     {
       role: 'English Instructor',

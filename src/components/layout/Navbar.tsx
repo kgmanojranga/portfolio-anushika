@@ -6,7 +6,7 @@ import Container from '../common/Container';
 const navLinks = [
   { to: ROUTES.HOME, label: 'Home' },
   { to: ROUTES.ABOUT, label: 'About' },
-  { to: ROUTES.PROJECTS, label: 'Projects' },
+  { to: ROUTES.EXPERIENCE, label: 'Experience' },
   { to: ROUTES.CONTACT, label: 'Contact' },
   { to: ROUTES.RESUME, label: 'Resume' },
 ];
