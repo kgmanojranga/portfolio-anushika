@@ -8,31 +8,18 @@
    ============================================================================= */
 
 @theme {
-  /* Primary Color Palette - Main brand color */
-  --color-primary-50: #faf5ff;
-  --color-primary-100: #f3e8ff;
-  --color-primary-200: #e9d5ff;
-  --color-primary-300: #d8b4fe;
-  --color-primary-400: #c084fc;
-  --color-primary-500: #a855f7;
-  --color-primary-600: #9333ea;
-  --color-primary-700: #7e22ce;
-  --color-primary-800: #6b21a8;
-  --color-primary-900: #581c87;
-  --color-primary-950: #3b0764;
-
-  /* Secondary Color Palette - Supporting color */
-  --color-secondary-50: #eff6ff;
-  --color-secondary-100: #dbeafe;
-  --color-secondary-200: #bfdbfe;
-  --color-secondary-300: #93c5fd;
-  --color-secondary-400: #60a5fa;
-  --color-secondary-500: #3b82f6;
-  --color-secondary-600: #2563eb;
-  --color-secondary-700: #1d4ed8;
-  --color-secondary-800: #1e40af;
-  --color-secondary-900: #1e3a8a;
-  --color-secondary-950: #172554;
+  /* Primary Color Palette - Blue brand scale */
+  --color-primary-50:  #ECEFF8;
+  --color-primary-100: #D7DCF4;
+  --color-primary-200: #AFB8E9;
+  --color-primary-300: #8895DD;
+  --color-primary-400: #6071D2;
+  --color-primary-500: #384EC7;
+  --color-primary-600: #2D3E9F;
+  --color-primary-700: #222F77;
+  --color-primary-800: #161F50;
+  --color-primary-900: #0B1028;
+  --color-primary-950: #080B1C;
 
   /* Custom Font Families */
   --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
