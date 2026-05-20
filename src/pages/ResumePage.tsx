@@ -42,12 +42,12 @@ const extracurricular = [
 ];
 
 const SectionLabel = ({ children }: { children: React.ReactNode }) => (
-  <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-5">
+  <p className="text-xs font-semibold uppercase tracking-widest text-blue-400 mb-5">
     {children}
   </p>
 );
 
-const Divider = () => <div className="border-t border-neutral-100 my-10" />;
+const Divider = () => <div className="border-t border-neutral-800 my-10" />;
 
 const ResumePage = () => {
   const {
@@ -77,7 +77,7 @@ const ResumePage = () => {
           {/* ── Top bar: title + print action ── */}
           <div className="flex items-start justify-between gap-4 mb-12">
             <div className="flex flex-col gap-2">
-              <h1 className="text-4xl md:text-5xl font-bold text-black tracking-tight">
+              <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
                 Résumé
               </h1>
               <p className="text-sm text-neutral-500 leading-relaxed max-w-md">
@@ -86,7 +86,7 @@ const ResumePage = () => {
             </div>
             <button
               onClick={handlePrint}
-              className="no-print shrink-0 flex items-center gap-2 px-4 py-2 border border-neutral-200 rounded-md text-sm font-medium text-neutral-600 hover:text-black hover:border-neutral-400 transition-colors"
+              className="no-print shrink-0 flex items-center gap-2 px-4 py-2 border border-neutral-700 rounded-md text-sm font-medium text-neutral-400 hover:text-white hover:border-neutral-500 transition-colors"
             >
               <svg
                 className="w-4 h-4"
@@ -106,8 +106,8 @@ const ResumePage = () => {
           </div>
 
           {/* ── Identity block ── */}
-          <div className="flex flex-col gap-1 pb-8 border-b border-neutral-200">
-            <h2 className="text-xl font-semibold text-black">
+          <div className="flex flex-col gap-1 pb-8 border-b border-neutral-800">
+            <h2 className="text-xl font-semibold text-white">
               {personal.name}
             </h2>
             <p className="text-sm text-neutral-500">{personal.tagline}</p>
@@ -117,13 +117,13 @@ const ResumePage = () => {
               </span>
               <a
                 href={`mailto:${personal.email}`}
-                className="text-xs text-neutral-400 hover:text-black transition-colors"
+                className="text-xs text-neutral-500 hover:text-white transition-colors"
               >
                 {personal.email}
               </a>
               <a
                 href={`tel:${personal.phone?.replace(/\s/g, '')}`}
-                className="text-xs text-neutral-400 hover:text-black transition-colors"
+                className="text-xs text-neutral-500 hover:text-white transition-colors"
               >
                 {personal.phone}
               </a>
@@ -135,7 +135,7 @@ const ResumePage = () => {
                     href={s.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-neutral-400 hover:text-black transition-colors"
+                    className="text-xs text-neutral-500 hover:text-white transition-colors"
                   >
                     {s.label}
                   </a>
@@ -144,8 +144,8 @@ const ResumePage = () => {
           </div>
 
           {/* ── Summary ── */}
-          <div className="py-8 border-b border-neutral-100">
-            <p className="text-sm text-neutral-600 leading-relaxed max-w-2xl">
+          <div className="py-8 border-b border-neutral-800">
+            <p className="text-sm text-neutral-400 leading-relaxed max-w-2xl">
               Results-driven Projects and Operations professional with 2+ years
               of experience in the IT sector, managing delivery, aligning
               cross-functional teams, and executing initiatives in fast-paced,
@@ -164,7 +164,7 @@ const ResumePage = () => {
                   key={group.label}
                   className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4"
                 >
-                  <span className="text-xs font-medium text-black shrink-0 w-36">
+                  <span className="text-xs font-medium text-white shrink-0 w-36">
                     {group.label}
                   </span>
                   <span className="text-xs text-neutral-500">
@@ -184,12 +184,12 @@ const ResumePage = () => {
               {experience.map((job, i) => (
                 <div
                   key={`${job.company}-${i}`}
-                  className="flex flex-col gap-5 pb-10 mb-10 border-b border-neutral-100 last:border-0 last:mb-0"
+                  className="flex flex-col gap-5 pb-10 mb-10 border-b border-neutral-800 last:border-0 last:mb-0"
                 >
                   {/* Header */}
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
                     <div className="flex flex-col gap-0.5">
-                      <h3 className="text-sm font-semibold text-black">
+                      <h3 className="text-sm font-semibold text-white">
                         {job.role}
                       </h3>
                       <p className="text-xs text-neutral-500">
@@ -201,7 +201,7 @@ const ResumePage = () => {
                         {job.period}
                       </span>
                       {job.type && (
-                        <span className="text-xs text-neutral-400 border border-neutral-200 rounded px-2 py-0.5 capitalize">
+                        <span className="text-xs text-neutral-400 border border-neutral-700 rounded px-2 py-0.5 capitalize">
                           {job.type}
                         </span>
                       )}
@@ -214,9 +214,9 @@ const ResumePage = () => {
                       {job.highlights.map((h, j) => (
                         <li
                           key={j}
-                          className="flex gap-3 items-start text-xs text-neutral-600 leading-relaxed"
+                          className="flex gap-3 items-start text-xs text-neutral-400 leading-relaxed"
                         >
-                          <span className="mt-1.5 w-1 h-1 rounded-full bg-neutral-400 shrink-0" />
+                          <span className="mt-1.5 w-1 h-1 rounded-full bg-blue-400 shrink-0" />
                           {h}
                         </li>
                       ))}
@@ -229,7 +229,7 @@ const ResumePage = () => {
                       {job.tools.map(t => (
                         <span
                           key={t}
-                          className="text-xs text-neutral-500 bg-neutral-100 rounded px-2 py-0.5"
+                          className="text-xs text-neutral-400 bg-neutral-900 rounded px-2 py-0.5"
                         >
                           {t}
                         </span>
@@ -253,7 +253,7 @@ const ResumePage = () => {
                   className="flex flex-col sm:flex-row sm:justify-between gap-1"
                 >
                   <div className="flex flex-col gap-0.5">
-                    <h3 className="text-sm font-semibold text-black">
+                    <h3 className="text-sm font-semibold text-white">
                       {edu.degree}
                     </h3>
                     <p className="text-xs text-neutral-500">
@@ -273,7 +273,7 @@ const ResumePage = () => {
               {/* A/L */}
               <div className="flex flex-col sm:flex-row sm:justify-between gap-1">
                 <div className="flex flex-col gap-0.5">
-                  <h3 className="text-sm font-semibold text-black">
+                  <h3 className="text-sm font-semibold text-white">
                     Advanced Level
                   </h3>
                   <p className="text-xs text-neutral-500">{alevel.school}</p>
@@ -293,13 +293,13 @@ const ResumePage = () => {
           {/* ── Certifications ── */}
           <div>
             <SectionLabel>Courses & Certifications</SectionLabel>
-            <div className="flex flex-col divide-y divide-neutral-100">
+            <div className="flex flex-col divide-y divide-neutral-800">
               {certifications.map(cert => (
                 <div
                   key={cert.title}
                   className="py-3 first:pt-0 last:pb-0 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-0.5"
                 >
-                  <p className="text-sm font-medium text-black leading-snug">
+                  <p className="text-sm font-medium text-white leading-snug">
                     {cert.title}
                   </p>
                   <p className="text-xs text-neutral-400 shrink-0">
@@ -319,7 +319,7 @@ const ResumePage = () => {
               {projects.map(project => (
                 <div key={project.title} className="flex flex-col gap-1.5">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
-                    <h3 className="text-sm font-semibold text-black leading-snug">
+                    <h3 className="text-sm font-semibold text-white leading-snug">
                       {project.title}
                     </h3>
                     {project.link && (
@@ -327,7 +327,7 @@ const ResumePage = () => {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs text-neutral-400 hover:text-black underline underline-offset-2 transition-colors shrink-0"
+                        className="text-xs text-neutral-500 hover:text-white underline underline-offset-2 transition-colors shrink-0"
                       >
                         IEEE Xplore ↗
                       </a>
@@ -341,7 +341,7 @@ const ResumePage = () => {
                       {project.tags.map(tag => (
                         <span
                           key={tag}
-                          className="text-xs text-neutral-500 bg-neutral-100 rounded px-2 py-0.5"
+                          className="text-xs text-neutral-400 bg-neutral-900 rounded px-2 py-0.5"
                         >
                           {tag}
                         </span>
@@ -362,9 +362,9 @@ const ResumePage = () => {
               {memberships.map(m => (
                 <div
                   key={m}
-                  className="flex gap-3 items-start text-xs text-neutral-600"
+                  className="flex gap-3 items-start text-xs text-neutral-400"
                 >
-                  <span className="mt-1.5 w-1 h-1 rounded-full bg-neutral-400 shrink-0" />
+                  <span className="mt-1.5 w-1 h-1 rounded-full bg-blue-400 shrink-0" />
                   {m}
                 </div>
               ))}
@@ -380,9 +380,9 @@ const ResumePage = () => {
               {extracurricular.map(item => (
                 <div
                   key={item}
-                  className="flex gap-3 items-start text-xs text-neutral-600"
+                  className="flex gap-3 items-start text-xs text-neutral-400"
                 >
-                  <span className="mt-1.5 w-1 h-1 rounded-full bg-neutral-400 shrink-0" />
+                  <span className="mt-1.5 w-1 h-1 rounded-full bg-blue-400 shrink-0" />
                   {item}
                 </div>
               ))}

@@ -10,10 +10,10 @@ const AboutPage = () => {
         <div className="flex flex-col gap-16">
           {/* ── Who I Am ── */}
           <div className="flex flex-col gap-6">
-            <h1 className="text-4xl md:text-5xl font-bold text-black tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
               Who I Am
             </h1>
-            <div className="flex flex-col gap-4 text-sm text-neutral-600 leading-relaxed max-w-xl">
+            <div className="flex flex-col gap-4 text-sm text-neutral-400 leading-relaxed max-w-xl">
               <p>
                 I'm a project manager and operations professional based in{' '}
                 {personal.location}, with a background that spans engineering,
@@ -38,13 +38,13 @@ const AboutPage = () => {
 
           {/* ── Education ── */}
           <div className="flex flex-col gap-6">
-            <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400">
+            <p className="text-xs font-semibold uppercase tracking-widest text-blue-400">
               Education
             </p>
             <div className="flex flex-col gap-5">
               {education.map(edu => (
                 <div key={edu.degree} className="flex flex-col gap-1">
-                  <h3 className="text-sm font-semibold text-black leading-snug">
+                  <h3 className="text-sm font-semibold text-white leading-snug">
                     {edu.degree}
                   </h3>
                   <p className="text-sm text-neutral-500">{edu.institution}</p>
@@ -61,16 +61,16 @@ const AboutPage = () => {
 
           {/* ── Certifications ── */}
           <div className="flex flex-col gap-6">
-            <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400">
+            <p className="text-xs font-semibold uppercase tracking-widest text-blue-400">
               Certifications
             </p>
-            <div className="flex flex-col divide-y divide-neutral-100">
+            <div className="flex flex-col divide-y divide-neutral-800">
               {certifications.map(cert => (
                 <div
                   key={cert.title}
                   className="py-3 first:pt-0 last:pb-0 flex flex-col gap-0.5"
                 >
-                  <p className="text-sm font-medium text-black leading-snug">
+                  <p className="text-sm font-medium text-white leading-snug">
                     {cert.title}
                   </p>
                   <p className="text-xs text-neutral-400">{cert.issuer}</p>
@@ -81,16 +81,16 @@ const AboutPage = () => {
 
           {/* ── Memberships ── */}
           <div className="flex flex-col gap-6">
-            <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400">
+            <p className="text-xs font-semibold uppercase tracking-widest text-blue-400">
               Memberships
             </p>
             <div className="flex flex-col gap-3">
               {memberships.map(m => (
                 <div
                   key={m}
-                  className="flex gap-3 items-start text-sm text-neutral-600"
+                  className="flex gap-3 items-start text-sm text-neutral-400"
                 >
-                  <span className="mt-1.5 w-1 h-1 rounded-full bg-neutral-400 shrink-0" />
+                  <span className="mt-1.5 w-1 h-1 rounded-full bg-blue-400 shrink-0" />
                   {m}
                 </div>
               ))}

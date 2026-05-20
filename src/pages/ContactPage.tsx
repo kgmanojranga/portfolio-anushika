@@ -117,7 +117,7 @@ const ContactPage = () => {
         <div className="flex flex-col gap-16">
           {/* ── Header ── */}
           <div className="flex flex-col gap-4">
-            <h1 className="text-4xl md:text-5xl font-bold text-black tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
               Get in touch
             </h1>
             <p className="text-sm text-neutral-500 leading-relaxed max-w-lg">
@@ -131,8 +131,8 @@ const ContactPage = () => {
             {/* ── Form ── */}
             <div>
               {formState === 'sent' ? (
-                <div className="flex flex-col gap-4 py-10 border border-neutral-200 rounded-lg px-8">
-                  <div className="w-9 h-9 rounded-full bg-black flex items-center justify-center">
+                <div className="flex flex-col gap-4 py-10 border border-neutral-800 rounded-lg px-8">
+                  <div className="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center">
                     <svg
                       className="w-4 h-4 text-white"
                       fill="none"
@@ -146,7 +146,7 @@ const ContactPage = () => {
                     </svg>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <p className="text-sm font-semibold text-black">
+                    <p className="text-sm font-semibold text-white">
                       Message sent
                     </p>
                     <p className="text-sm text-neutral-500">
@@ -163,7 +163,7 @@ const ContactPage = () => {
                       });
                       setFormState('idle');
                     }}
-                    className="self-start text-xs text-neutral-400 underline underline-offset-2 hover:text-black transition-colors mt-1"
+                    className="self-start text-xs text-neutral-500 underline underline-offset-2 hover:text-white transition-colors mt-1"
                   >
                     Send another message
                   </button>
@@ -204,7 +204,7 @@ const ContactPage = () => {
                       name="subject"
                       value={form.subject}
                       onChange={handleChange}
-                      className={`${inputClass(false)} text-neutral-600 appearance-none`}
+                      className={`${inputClass(false)} text-neutral-400 appearance-none`}
                     >
                       <option value="">Select a topic…</option>
                       {subjectOptions.map(o => (
@@ -231,7 +231,7 @@ const ContactPage = () => {
                     <button
                       type="submit"
                       disabled={formState === 'sending'}
-                      className="px-5 py-2.5 bg-black text-white text-sm font-medium rounded-md hover:bg-neutral-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="px-5 py-2.5 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {formState === 'sending' ? 'Sending…' : 'Send message'}
                     </button>
@@ -249,10 +249,10 @@ const ContactPage = () => {
             <div className="flex flex-col gap-10">
               {/* Contact methods */}
               <div className="flex flex-col gap-5">
-                <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400">
+                <p className="text-xs font-semibold uppercase tracking-widest text-blue-400">
                   Contact
                 </p>
-                <div className="flex flex-col divide-y divide-neutral-100">
+                <div className="flex flex-col divide-y divide-neutral-800">
                   {contactMethods.map(m => (
                     <a
                       key={m.label}
@@ -265,7 +265,7 @@ const ContactPage = () => {
                         {m.icon}
                         {m.label}
                       </span>
-                      <span className="text-sm font-medium text-black group-hover:underline underline-offset-2 transition-colors">
+                      <span className="text-sm font-medium text-white group-hover:underline underline-offset-2 transition-colors">
                         {m.value}
                       </span>
                       <span className="text-xs text-neutral-400">
@@ -278,25 +278,25 @@ const ContactPage = () => {
 
               {/* Availability */}
               <div className="flex flex-col gap-3">
-                <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400">
+                <p className="text-xs font-semibold uppercase tracking-widest text-blue-400">
                   Availability
                 </p>
                 <div className="flex flex-col gap-2">
                   <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-black shrink-0" />
-                    <p className="text-sm text-neutral-600">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0" />
+                    <p className="text-sm text-neutral-400">
                       Open to full-time roles
                     </p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
-                    <p className="text-sm text-neutral-600">
+                    <span className="w-1.5 h-1.5 rounded-full bg-neutral-600 shrink-0" />
+                    <p className="text-sm text-neutral-400">
                       Freelance / contract work
                     </p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
-                    <p className="text-sm text-neutral-600">
+                    <span className="w-1.5 h-1.5 rounded-full bg-neutral-600 shrink-0" />
+                    <p className="text-sm text-neutral-400">
                       Based in {personal.location}
                     </p>
                   </div>
@@ -311,10 +311,10 @@ const ContactPage = () => {
 };
 
 const inputClass = (hasError: boolean) =>
-  `w-full px-3 py-2.5 text-sm text-black bg-white border rounded-md outline-none transition-colors placeholder:text-neutral-400 focus:border-black focus:ring-1 focus:ring-black ${
+  `w-full px-3 py-2.5 text-sm text-white bg-neutral-900 border rounded-md outline-none transition-colors placeholder:text-neutral-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 ${
     hasError
-      ? 'border-red-400 focus:border-red-500 focus:ring-red-500'
-      : 'border-neutral-200'
+      ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
+      : 'border-neutral-700'
   }`;
 
 interface FieldProps {
@@ -327,7 +327,7 @@ interface FieldProps {
 const Field = ({ label, hint, error, children }: FieldProps) => (
   <div className="flex flex-col gap-1.5">
     <div className="flex items-center gap-2">
-      <label className="text-xs font-medium text-black">{label}</label>
+      <label className="text-xs font-medium text-white">{label}</label>
       {hint && <span className="text-xs text-neutral-400">{hint}</span>}
     </div>
     {children}

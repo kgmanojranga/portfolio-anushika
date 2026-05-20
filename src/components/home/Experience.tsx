@@ -87,8 +87,8 @@ const Experience = ({ experience }: ExperienceProps) => {
   };
 
   return (
-    <section className="py-16 border-b border-neutral-200">
-      <h2 className="text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-8 text-center">
+    <section className="py-16 border-b border-neutral-800">
+      <h2 className="text-xs font-semibold uppercase tracking-widest text-blue-400 mb-8 text-center">
         Experience
       </h2>
 
@@ -96,7 +96,7 @@ const Experience = ({ experience }: ExperienceProps) => {
         {/* ── Timeline ── */}
         <div className="relative flex flex-col w-28 shrink-0 py-1">
           {/* track */}
-          <div className="absolute left-[9px] top-3 bottom-3 w-px bg-blue-100" />
+          <div className="absolute left-[9px] top-3 bottom-3 w-px bg-blue-900" />
 
           {experience.map((job, i) => {
             const isActive = i === activeIndex;
@@ -110,8 +110,8 @@ const Experience = ({ experience }: ExperienceProps) => {
                 <div
                   className={`mt-0.5 shrink-0 rounded-full border-2 transition-all duration-300 ${
                     isActive
-                      ? 'w-4 h-4 bg-blue-600 border-blue-600'
-                      : 'w-2.5 h-2.5 bg-white border-blue-300 mt-[3px] group-hover:border-blue-500'
+                      ? 'w-4 h-4 bg-blue-500 border-blue-500'
+                      : 'w-2.5 h-2.5 bg-neutral-900 border-blue-800 mt-[3px] group-hover:border-blue-500'
                   }`}
                 />
                 {/* label */}
@@ -167,31 +167,29 @@ const Experience = ({ experience }: ExperienceProps) => {
                         ? `scale(0.97) translateY(${PEEK / 2}px)`
                         : 'scale(0.95) translateY(0)',
                     transformOrigin: 'top center',
-                    borderColor: isActive
-                      ? 'rgb(212 212 212)'
-                      : 'rgb(245 245 245)',
-                    backgroundColor: isActive ? 'white' : 'rgb(250 250 250)',
+                    borderColor: isActive ? 'rgb(37 99 235)' : 'rgb(23 23 23)',
+                    backgroundColor: isActive ? 'rgb(10 10 10)' : 'rgb(9 9 9)',
                     boxShadow: isActive
-                      ? '0 1px 4px 0 rgb(0 0 0 / 0.06)'
+                      ? '0 1px 12px 0 rgb(37 99 235 / 0.15)'
                       : 'none',
                     pointerEvents: isActive ? 'auto' : 'none',
                   }}
                 >
                   <div className="flex items-start justify-between gap-2">
-                    <div className="w-9 h-9 rounded-md bg-neutral-100 flex items-center justify-center shrink-0">
-                      <span className="text-xs font-bold text-neutral-500">
+                    <div className="w-9 h-9 rounded-md bg-neutral-900 flex items-center justify-center shrink-0">
+                      <span className="text-xs font-bold text-blue-400">
                         {job.company.charAt(0)}
                       </span>
                     </div>
                     {job.type && (
-                      <span className="text-xs text-neutral-400 border border-neutral-200 rounded px-2 py-0.5 shrink-0">
+                      <span className="text-xs text-neutral-400 border border-neutral-700 rounded px-2 py-0.5 shrink-0">
                         {typeBadge[job.type]}
                       </span>
                     )}
                   </div>
 
                   <div className="flex flex-col gap-0.5">
-                    <h3 className="text-sm font-semibold text-black leading-snug">
+                    <h3 className="text-sm font-semibold text-white leading-snug">
                       {job.role}
                     </h3>
                     <p className="text-xs text-neutral-500">
@@ -209,7 +207,7 @@ const Experience = ({ experience }: ExperienceProps) => {
                       {job.tools.map(tool => (
                         <span
                           key={tool}
-                          className="text-xs text-neutral-500 bg-neutral-100 rounded px-2 py-0.5"
+                          className="text-xs text-neutral-400 bg-neutral-900 rounded px-2 py-0.5"
                         >
                           {tool}
                         </span>

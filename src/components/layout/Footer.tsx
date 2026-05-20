@@ -53,22 +53,22 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white border-t border-neutral-200">
+    <footer className="bg-black border-t border-neutral-800">
       <Container className="py-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center shrink-0">
+              <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center shrink-0">
                 <span className="text-white text-xs font-semibold tracking-wide select-none">
                   AN
                 </span>
               </div>
-              <span className="text-sm font-semibold text-black tracking-tight">
+              <span className="text-sm font-semibold text-white tracking-tight">
                 Anushika Nayomi
               </span>
             </div>
-            <p className="text-xs text-neutral-500 leading-relaxed max-w-xs">
+            <p className="text-xs text-neutral-400 leading-relaxed max-w-xs">
               A personal portfolio showcasing my work, skills, and journey as a
               creative professional.
             </p>
@@ -76,7 +76,7 @@ const Footer = () => {
 
           {/* Nav links */}
           <div className="flex flex-col gap-3">
-            <h3 className="text-xs font-semibold text-black uppercase tracking-widest">
+            <h3 className="text-xs font-semibold text-neutral-400 uppercase tracking-widest">
               Navigation
             </h3>
             <ul className="flex flex-col gap-2">
@@ -84,7 +84,7 @@ const Footer = () => {
                 <li key={to}>
                   <Link
                     to={to}
-                    className="text-sm text-neutral-500 hover:text-black transition-colors"
+                    className="text-sm text-neutral-400 hover:text-white transition-colors"
                   >
                     {label}
                   </Link>
@@ -95,7 +95,7 @@ const Footer = () => {
 
           {/* Social links */}
           <div className="flex flex-col gap-3">
-            <h3 className="text-xs font-semibold text-black uppercase tracking-widest">
+            <h3 className="text-xs font-semibold text-neutral-400 uppercase tracking-widest">
               Connect
             </h3>
             <ul className="flex flex-col gap-3">
@@ -105,7 +105,7 @@ const Footer = () => {
                     href={href}
                     target={href.startsWith('mailto') ? undefined : '_blank'}
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm text-neutral-500 hover:text-black transition-colors"
+                    className="flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors"
                   >
                     {icon}
                     {label}
@@ -117,11 +117,11 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-10 pt-6 border-t border-neutral-100 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-xs text-neutral-400">
+        <div className="mt-10 pt-6 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p className="text-xs text-neutral-500">
             &copy; {currentYear} Anushika Nayomi. All rights reserved.
           </p>
-          <p className="text-xs text-neutral-400">
+          <p className="text-xs text-neutral-500">
             Built with React &amp; TypeScript
           </p>
         </div>

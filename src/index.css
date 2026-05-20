@@ -9,17 +9,17 @@
 
 @theme {
   /* Primary Color Palette - Blue brand scale */
-  --color-primary-50:  #ECEFF8;
-  --color-primary-100: #D7DCF4;
-  --color-primary-200: #AFB8E9;
-  --color-primary-300: #8895DD;
-  --color-primary-400: #6071D2;
-  --color-primary-500: #384EC7;
-  --color-primary-600: #2D3E9F;
-  --color-primary-700: #222F77;
-  --color-primary-800: #161F50;
-  --color-primary-900: #0B1028;
-  --color-primary-950: #080B1C;
+  --color-primary-50: #eceff8;
+  --color-primary-100: #d7dcf4;
+  --color-primary-200: #afb8e9;
+  --color-primary-300: #8895dd;
+  --color-primary-400: #6071d2;
+  --color-primary-500: #384ec7;
+  --color-primary-600: #2d3e9f;
+  --color-primary-700: #222f77;
+  --color-primary-800: #161f50;
+  --color-primary-900: #0b1028;
+  --color-primary-950: #080b1c;
 
   /* Custom Font Families */
   --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -71,15 +71,15 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-neutral-100 dark:bg-neutral-900;
+    @apply bg-neutral-950;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-neutral-300 dark:bg-neutral-700 rounded-md;
+    @apply bg-neutral-700 rounded-md;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-neutral-400 dark:bg-neutral-600;
+    @apply bg-neutral-600;
   }
 }
 

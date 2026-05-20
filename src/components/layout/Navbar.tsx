@@ -21,7 +21,7 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-neutral-200 shadow-sm">
+    <nav className="sticky top-0 z-50 bg-black border-b border-neutral-800 shadow-sm">
       <Container className="h-16">
         <div className="flex items-center justify-between h-full">
           {/* Logo / Avatar */}
@@ -31,12 +31,12 @@ const Navbar = () => {
             className="flex items-center gap-3 group"
             aria-label="Go to home"
           >
-            <div className="w-9 h-9 rounded-full bg-black flex items-center justify-center shrink-0">
+            <div className="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center shrink-0">
               <span className="text-white text-xs font-semibold tracking-wide select-none">
                 AN
               </span>
             </div>
-            <span className="hidden sm:block text-sm font-semibold text-black tracking-tight group-hover:opacity-70 transition-opacity">
+            <span className="hidden sm:block text-sm font-semibold text-white tracking-tight group-hover:opacity-70 transition-opacity">
               Anushika Nayomi
             </span>
           </Link>
@@ -49,8 +49,8 @@ const Navbar = () => {
                   to={to}
                   className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                     isActive(to)
-                      ? 'bg-black text-white'
-                      : 'text-neutral-600 hover:text-black hover:bg-neutral-100'
+                      ? 'bg-blue-600 text-white'
+                      : 'text-neutral-400 hover:text-white hover:bg-neutral-800'
                   }`}
                 >
                   {label}
@@ -62,7 +62,7 @@ const Navbar = () => {
           {/* Mobile hamburger */}
           <button
             onClick={toggleMenu}
-            className="md:hidden p-2 rounded-md text-neutral-600 hover:text-black hover:bg-neutral-100 transition-colors"
+            className="md:hidden p-2 rounded-md text-neutral-400 hover:text-white hover:bg-neutral-800 transition-colors"
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isMenuOpen}
           >
@@ -87,7 +87,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden border-t border-neutral-200 bg-white">
+        <div className="md:hidden border-t border-neutral-800 bg-black">
           <Container>
             <ul className="py-2">
               {navLinks.map(({ to, label }) => (
@@ -97,8 +97,8 @@ const Navbar = () => {
                     onClick={closeMenu}
                     className={`flex items-center px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${
                       isActive(to)
-                        ? 'bg-black text-white'
-                        : 'text-neutral-600 hover:text-black hover:bg-neutral-100'
+                        ? 'bg-blue-600 text-white'
+                        : 'text-neutral-400 hover:text-white hover:bg-neutral-800'
                     }`}
                   >
                     {label}
