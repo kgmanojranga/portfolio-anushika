@@ -67,8 +67,33 @@ const ResumePage = () => {
       <style>{`
         @media print {
           nav, footer, .no-print { display: none !important; }
-          body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-          .print-page { padding: 0 !important; }
+
+          html, body, #root, main {
+            background-color: #ffffff !important;
+          }
+
+          .print-page,
+          .print-page div,
+          .print-page p,
+          .print-page h1,
+          .print-page h2,
+          .print-page h3,
+          .print-page h4,
+          .print-page span,
+          .print-page li,
+          .print-page a {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+            box-shadow: none !important;
+          }
+
+          .print-page {
+            padding: 0 !important;
+          }
+
+          .print-page [class*="border"] {
+            border-color: #d4d4d4 !important;
+          }
         }
       `}</style>
 
