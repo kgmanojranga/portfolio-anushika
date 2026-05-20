@@ -21,7 +21,10 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="sticky top-0 z-50 bg-black border-b border-neutral-800 shadow-sm">
+    <nav
+      className="fixed inset-x-0 top-0 z-50 bg-black border-b border-neutral-800 shadow-sm"
+      style={{ paddingTop: 'env(safe-area-inset-top)' }}
+    >
       <Container className="h-16">
         <div className="flex items-center justify-between h-full">
           {/* Logo / Avatar */}

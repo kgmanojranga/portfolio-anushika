@@ -6,7 +6,10 @@ const Layout = () => {
   return (
     <div className="flex flex-col min-h-screen bg-black text-white">
       <Navbar />
-      <main className="w-full flex-1">
+      <main
+        className="w-full flex-1"
+        style={{ paddingTop: 'calc(4rem + env(safe-area-inset-top))' }}
+      >
         <Outlet />
       </main>
       <Footer />
