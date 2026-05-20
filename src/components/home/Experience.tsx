@@ -32,7 +32,9 @@ const Modal = ({ job, onClose }: ModalProps) => {
 
   // Close on Escape
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, [onClose]);
@@ -40,7 +42,9 @@ const Modal = ({ job, onClose }: ModalProps) => {
   // Lock body scroll while open
   useEffect(() => {
     document.body.style.overflow = 'hidden';
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, []);
 
   return (
@@ -56,7 +60,15 @@ const Modal = ({ job, onClose }: ModalProps) => {
           className="absolute top-5 right-5 w-9 h-9 flex items-center justify-center rounded-md text-neutral-400 hover:text-white hover:bg-neutral-800 transition-colors"
           aria-label="Close"
         >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+          <svg
+            className="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            viewBox="0 0 24 24"
+          >
             <path d="M18 6L6 18M6 6l12 12" />
           </svg>
         </button>
@@ -244,48 +256,52 @@ const Experience = ({ experience }: ExperienceProps) => {
         </div>
 
         {/* Active card — tappable to open modal */}
-        {experience[activeIndex] && (() => {
-          const job = experience[activeIndex];
-          return (
-            <button
-              onClick={() => setModalJob(job)}
-              className="text-left w-full border border-blue-600 rounded-lg p-4 flex flex-col gap-3 bg-neutral-950"
-              style={{ boxShadow: '0 1px 12px 0 rgb(37 99 235 / 0.15)' }}
-            >
-              <div className="flex items-start justify-between gap-2">
-                <div className="w-9 h-9 rounded-md bg-neutral-900 flex items-center justify-center shrink-0">
-                  <span className="text-xs font-bold text-blue-400">
-                    {job.company.charAt(0)}
-                  </span>
+        {experience[activeIndex] &&
+          (() => {
+            const job = experience[activeIndex];
+            return (
+              <button
+                onClick={() => setModalJob(job)}
+                className="text-left w-full border border-blue-600 rounded-lg p-4 flex flex-col gap-3 bg-neutral-950"
+                style={{ boxShadow: '0 1px 12px 0 rgb(37 99 235 / 0.15)' }}
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <div className="w-9 h-9 rounded-md bg-neutral-900 flex items-center justify-center shrink-0">
+                    <span className="text-xs font-bold text-blue-400">
+                      {job.company.charAt(0)}
+                    </span>
+                  </div>
+                  {job.type && (
+                    <span className="text-xs text-neutral-400 border border-neutral-700 rounded px-2 py-0.5 shrink-0">
+                      {typeBadge[job.type]}
+                    </span>
+                  )}
                 </div>
-                {job.type && (
-                  <span className="text-xs text-neutral-400 border border-neutral-700 rounded px-2 py-0.5 shrink-0">
-                    {typeBadge[job.type]}
-                  </span>
-                )}
-              </div>
-              <div className="flex flex-col gap-0.5">
-                <h3 className="text-sm font-semibold text-white leading-snug">
-                  {job.role}
-                </h3>
-                <p className="text-xs text-neutral-500">
-                  {job.company} · {job.location}
+                <div className="flex flex-col gap-0.5">
+                  <h3 className="text-sm font-semibold text-white leading-snug">
+                    {job.role}
+                  </h3>
+                  <p className="text-xs text-neutral-500">
+                    {job.company} · {job.location}
+                  </p>
+                  <p className="text-xs text-neutral-400">{job.period}</p>
+                </div>
+                <p className="text-sm text-neutral-500 leading-relaxed line-clamp-3">
+                  {job.description}
                 </p>
-                <p className="text-xs text-neutral-400">{job.period}</p>
-              </div>
-              <p className="text-sm text-neutral-500 leading-relaxed line-clamp-3">
-                {job.description}
-              </p>
-              <span className="text-xs text-blue-400 mt-auto">
-                Tap to read more →
-              </span>
-            </button>
-          );
-        })()}
+                <span className="text-xs text-blue-400 mt-auto">
+                  Tap to read more →
+                </span>
+              </button>
+            );
+          })()}
       </div>
 
       {/* ── Desktop layout (sm+) ── */}
-      <div className="hidden sm:flex gap-8" style={{ height: CARD_HEIGHT + PEEK }}>
+      <div
+        className="hidden sm:flex gap-8"
+        style={{ height: CARD_HEIGHT + PEEK }}
+      >
         {/* Timeline */}
         <div className="relative flex flex-col w-28 shrink-0 py-1">
           <div className="absolute left-[9px] top-3 bottom-3 w-px bg-blue-900" />
@@ -331,7 +347,9 @@ const Experience = ({ experience }: ExperienceProps) => {
             return (
               <div
                 key={`${job.company}-${job.period}`}
-                ref={el => { cardRefs.current[i] = el; }}
+                ref={el => {
+                  cardRefs.current[i] = el;
+                }}
                 style={{
                   height: CARD_HEIGHT,
                   scrollSnapAlign: 'start',
@@ -352,7 +370,9 @@ const Experience = ({ experience }: ExperienceProps) => {
                     transformOrigin: 'top center',
                     borderColor: isActive ? 'rgb(37 99 235)' : 'rgb(23 23 23)',
                     backgroundColor: isActive ? 'rgb(10 10 10)' : 'rgb(9 9 9)',
-                    boxShadow: isActive ? '0 1px 12px 0 rgb(37 99 235 / 0.15)' : 'none',
+                    boxShadow: isActive
+                      ? '0 1px 12px 0 rgb(37 99 235 / 0.15)'
+                      : 'none',
                     pointerEvents: isActive ? 'auto' : 'none',
                   }}
                 >
@@ -407,9 +427,7 @@ const Experience = ({ experience }: ExperienceProps) => {
       </div>
 
       {/* ── Modal ── */}
-      {modalJob && (
-        <Modal job={modalJob} onClose={() => setModalJob(null)} />
-      )}
+      {modalJob && <Modal job={modalJob} onClose={() => setModalJob(null)} />}
     </section>
   );
 };
