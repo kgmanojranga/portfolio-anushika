@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Container from '../components/common/Container';
 import { profile } from '../data/profile';
 import type { CompanyProject, WorkExperience } from '../types';
@@ -9,14 +10,21 @@ const typeBadge: Record<NonNullable<WorkExperience['type']>, string> = {
   contract: 'Contract',
 };
 
-const ProjectCard = ({ project }: { project: CompanyProject }) => (
+const ProjectCard = ({ project }: { project: CompanyProject }) => {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
   <div className="flex flex-col gap-3 border border-neutral-800 rounded-lg overflow-hidden">
     {project.image ? (
-      <img
-        src={project.image}
-        alt={project.name}
-        className="w-full h-36 object-cover shrink-0"
-      />
+      <div className="relative w-full h-36 shrink-0 bg-neutral-900">
+        <img
+          src={project.image}
+          alt={project.name}
+          loading="lazy"
+          onLoad={() => setLoaded(true)}
+          className={`w-full h-full object-cover transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+        />
+      </div>
     ) : (
       <div className="w-full h-36 bg-neutral-900 shrink-0" />
     )}
@@ -41,7 +49,8 @@ const ProjectCard = ({ project }: { project: CompanyProject }) => (
       )}
     </div>
   </div>
-);
+  );
+};
 
 const ExperienceEntry = ({ job }: { job: WorkExperience }) => (
   <div className="flex flex-col gap-6 py-10 border-b border-neutral-800 last:border-0">
