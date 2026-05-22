@@ -14,41 +14,41 @@ const ProjectCard = ({ project }: { project: CompanyProject }) => {
   const [loaded, setLoaded] = useState(false);
 
   return (
-  <div className="flex flex-col gap-3 border border-neutral-800 rounded-lg overflow-hidden">
-    {project.image ? (
-      <div className="relative w-full h-36 shrink-0 bg-neutral-900">
-        <img
-          src={project.image}
-          alt={project.name}
-          loading="lazy"
-          onLoad={() => setLoaded(true)}
-          className={`w-full h-full object-cover transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
-        />
-      </div>
-    ) : (
-      <div className="w-full h-36 bg-neutral-900 shrink-0" />
-    )}
-    <div className="flex flex-col gap-2 px-4 pb-4">
-      <h4 className="text-sm font-semibold text-white leading-snug">
-        {project.name}
-      </h4>
-      <p className="text-xs text-neutral-500 leading-relaxed">
-        {project.description}
-      </p>
-      {project.tags && project.tags.length > 0 && (
-        <div className="flex flex-wrap gap-1.5 pt-1">
-          {project.tags.map(tag => (
-            <span
-              key={tag}
-              className="text-xs text-neutral-400 bg-neutral-900 rounded px-2 py-0.5"
-            >
-              {tag}
-            </span>
-          ))}
+    <div className="flex flex-col gap-3 border border-neutral-800 rounded-lg overflow-hidden">
+      {project.image ? (
+        <div className="relative w-full h-36 shrink-0 bg-neutral-900">
+          <img
+            src={project.image}
+            alt={project.name}
+            loading="lazy"
+            onLoad={() => setLoaded(true)}
+            className={`w-full h-full object-cover transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+          />
         </div>
+      ) : (
+        <div className="w-full h-36 bg-neutral-900 shrink-0" />
       )}
+      <div className="flex flex-col gap-2 px-4 pb-4">
+        <h4 className="text-sm font-semibold text-white leading-snug">
+          {project.name}
+        </h4>
+        <p className="text-xs text-neutral-500 leading-relaxed">
+          {project.description}
+        </p>
+        {project.tags && project.tags.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 pt-1">
+            {project.tags.map(tag => (
+              <span
+                key={tag}
+                className="text-xs text-neutral-400 bg-neutral-900 rounded px-2 py-0.5"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
-  </div>
   );
 };
 
