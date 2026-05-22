@@ -1,10 +1,14 @@
 import type { ProfileData } from '../types';
+import wandrlustImg from '../assets/project-images/wandrlust.png';
+import draftableImg from '../assets/project-images/draftables.png';
+import staryoImg from '../assets/project-images/staryo.png';
+import shopAssistImg from '../assets/project-images/shop-assist.png';
 
 export const profile: ProfileData = {
   personal: {
     name: 'Anushika Nayomi',
     tagline: 'Project Manager & Operations Professional',
-    bio: "A versatile professional with a background spanning project management, operations, web development, and engineering. I bring structure to complexity — whether that's managing agile teams, coordinating cross-functional operations, or shipping products on time.",
+    bio: 'Experienced in coordinating digital products, cross-functional teams, and business operations across fast-paced environments. With a background in engineering, web development, and project delivery, I focus on bringing structure, visibility, and streamlined execution to complex workflows.',
     location: 'Colombo, Sri Lanka',
     email: 'anushikanayomi2@gmail.com',
     phone: '(+94) 74 023 9054',
@@ -41,7 +45,7 @@ export const profile: ProfileData = {
     {
       title: 'Product & Client Coordination',
       description:
-        'Bridging the gap between clients and delivery teams — gathering requirements, managing feedback loops, and ensuring alignment.',
+        'Bridging the gap between clients and delivery teams by gathering requirements, managing feedback loops, and ensuring alignment.',
     },
     {
       title: 'Process Improvement',
@@ -58,14 +62,17 @@ export const profile: ProfileData = {
       period: 'Jan 2025 – Jan 2026',
       type: 'full-time',
       description:
-        'Managed agile delivery across multiple product teams — overseeing sprint execution, client coordination, operations, and cross-functional reporting at a tech startup.',
+        'Managed agile delivery across multiple product teams, overseeing sprint execution, client coordination, operations, and cross-functional reporting at a tech startup.',
       highlights: [
         'Led end-to-end agile project management across 7 sprints for a team of 8–10 on the Wandrlust mobile app, delivering an App Store-ready product.',
-        'Coordinated three concurrent projects (Draftable, HeyStream, Graffiti) with structured Jira dashboards and sprint reporting.',
+        'Coordinated three concurrent projects (Draftable White Labelling, HeyStream, and Graffiti), overseeing delivery progress through structured tracking systems and Jira dashboards.',
         'Drafted user stories, identified bugs, and managed payment disputes for the Staryo platform.',
-        'Conducted competitor research and market analysis to support CTO-led initiatives (Shop Assist).',
+        'Coordinated directly with clients to manage feedback, change requests, and delivery expectations throughout the project lifecycle.',
+        'Initiated and maintained Jira dashboards, KPI trackers, and reporting systems to improve project visibility across multiple projects.',
+        'Conducted research across operational and business needs, including competitor analysis, process optimization, automation opportunities, product positioning, and CEO/CTO-led strategic activities.',
+        'Supported recruitment coordination and hiring activities, including scheduling and administrative support.',
         'Managed end-to-end corporate gift box procurement and company event coordination.',
-        'Led lead generation efforts — defined ICPs, built outreach templates, and iterated with the team.',
+        'Led lead generation efforts: defined ICPs, built outreach templates, and iterated with the team.',
       ],
       tools: [
         'Jira',
@@ -82,12 +89,28 @@ export const profile: ProfileData = {
           description:
             'Led end-to-end agile delivery across 7 sprints for a travel mobile app, managing a team of 8–10 and shipping an App Store-ready product.',
           tags: ['Mobile', 'Agile', 'iOS'],
+          image: wandrlustImg,
         },
         {
           name: 'Draftable',
           description:
             'Coordinated sprint cycles and maintained structured Jira dashboards for this document comparison SaaS product.',
           tags: ['SaaS', 'Jira', 'Sprint Management'],
+          image: draftableImg,
+        },
+        {
+          name: 'Staryo',
+          description:
+            'Drafted user stories, identified and logged bugs, and managed payment disputes for this platform.',
+          tags: ['QA', 'Stripe', 'User Stories'],
+          image: staryoImg,
+        },
+        {
+          name: 'Shop Assist',
+          description:
+            'Conducted competitor research and market analysis to support CTO-led product initiatives.',
+          tags: ['Research', 'Market Analysis'],
+          image: shopAssistImg,
         },
         {
           name: 'HeyStream',
@@ -100,18 +123,6 @@ export const profile: ProfileData = {
           description:
             'Oversaw project tracking and sprint reporting for a creative content platform.',
           tags: ['Content', 'Coordination'],
-        },
-        {
-          name: 'Staryo',
-          description:
-            'Drafted user stories, identified and logged bugs, and managed payment disputes for this platform.',
-          tags: ['QA', 'Stripe', 'User Stories'],
-        },
-        {
-          name: 'Shop Assist',
-          description:
-            'Conducted competitor research and market analysis to support CTO-led product initiatives.',
-          tags: ['Research', 'Market Analysis'],
         },
       ],
     },
@@ -137,7 +148,7 @@ export const profile: ProfileData = {
       description:
         'Built and maintained features for MyGP Portal, a private healthcare appointment platform serving the Australian market, working within a cross-functional team.',
       highlights: [
-        'Contributed to the MyGP Portal — a private healthcare appointment platform for the Australian market.',
+        'Contributed to the MyGP Portal, a private healthcare appointment platform for the Australian market.',
         'Built new pages, modals, and features; resolved bugs to improve user experience.',
         'Worked with a multi-role user system (GP, Specialist, Practice, Hospital, etc.) and managed data via PostgreSQL.',
       ],

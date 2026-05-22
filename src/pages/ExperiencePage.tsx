@@ -11,7 +11,15 @@ const typeBadge: Record<NonNullable<WorkExperience['type']>, string> = {
 
 const ProjectCard = ({ project }: { project: CompanyProject }) => (
   <div className="flex flex-col gap-3 border border-neutral-800 rounded-lg overflow-hidden">
-    <div className="w-full h-36 bg-neutral-900 shrink-0" />
+    {project.image ? (
+      <img
+        src={project.image}
+        alt={project.name}
+        className="w-full h-36 object-cover shrink-0"
+      />
+    ) : (
+      <div className="w-full h-36 bg-neutral-900 shrink-0" />
+    )}
     <div className="flex flex-col gap-2 px-4 pb-4">
       <h4 className="text-sm font-semibold text-white leading-snug">
         {project.name}

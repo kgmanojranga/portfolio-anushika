@@ -23,6 +23,7 @@ export interface CompanyProject {
   name: string;
   description: string;
   tags?: string[];
+  image?: string;
 }
 
 export interface WorkExperience {
