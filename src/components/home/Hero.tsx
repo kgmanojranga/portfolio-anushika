@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import type { PersonalInfo } from '../../types';
 import { ROUTES } from '../../router/routes';
+import centeredHero from '../../assets/hero-images/centered-hero.jpeg';
+import rightHero from '../../assets/hero-images/right-hero.jpeg';
 
 interface HeroProps {
   personal: PersonalInfo;
@@ -9,10 +11,25 @@ interface HeroProps {
 const Hero = ({ personal }: HeroProps) => {
   return (
     <section
-      className="w-full border-b border-neutral-800 flex items-center"
+      className="relative w-full border-b border-neutral-800 flex items-center overflow-hidden"
       style={{ height: 'calc(100dvh - 64px)' }}
     >
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-[1280px]">
+      {/* Mobile/tablet: centered background image */}
+      <img
+        src={centeredHero}
+        alt={personal.name}
+        className="lg:hidden absolute inset-0 w-full h-full object-cover object-center"
+      />
+      {/* Desktop: right-aligned background image */}
+      <img
+        src={rightHero}
+        alt={personal.name}
+        className="hidden lg:block absolute inset-0 w-full h-full object-cover object-center"
+      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/60 lg:bg-black/30" />
+
+      <div className="relative mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-[1280px]">
         <div className="flex flex-col gap-6 max-w-2xl">
           <div className="flex flex-col gap-3">
             <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">

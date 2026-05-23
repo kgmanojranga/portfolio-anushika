@@ -1,4 +1,5 @@
 import type { FocusArea } from '../../types';
+import backgroundImage from '../../assets/background-01.jpeg';
 
 interface WhatIDoProps {
   focusAreas: FocusArea[];
@@ -7,10 +8,16 @@ interface WhatIDoProps {
 const WhatIDo = ({ focusAreas }: WhatIDoProps) => {
   return (
     <section
-      className="w-full border-b border-neutral-800 flex flex-col justify-center"
-      style={{ minHeight: 'calc(100dvh - 64px)' }}
+      className="w-full border-b border-neutral-800 flex flex-col justify-center relative"
+      style={{
+        minHeight: 'calc(100dvh - 64px)',
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
     >
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-[1280px] py-16">
+      <div className="absolute inset-0 bg-black/70" />
+      <div className="relative mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-[1280px] py-16">
         <h2 className="text-xs font-semibold uppercase tracking-widest text-blue-400 mb-8 text-center">
           What I Do
         </h2>

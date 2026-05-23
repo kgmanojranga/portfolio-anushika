@@ -46,15 +46,15 @@ const Navbar = () => {
             </Link>
 
             {/* Desktop links */}
-            <ul className="hidden md:flex items-center gap-1">
+            <ul className="hidden md:flex items-center gap-2">
               {navLinks.map(({ to, label }) => (
                 <li key={to}>
                   <Link
                     to={to}
-                    className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                    className={`px-6 py-2.5 rounded-xl text-sm font-medium transition-all border border-white/20 ${
                       isActive(to)
                         ? 'bg-blue-600 text-white'
-                        : 'text-neutral-400 hover:text-white hover:bg-neutral-800'
+                        : 'text-neutral-400 hover:text-white hover:border-blue-600 hover:shadow-[0_0_12px_rgba(37,99,235,0.4)]'
                     }`}
                   >
                     {label}

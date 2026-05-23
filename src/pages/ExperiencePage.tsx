@@ -140,7 +140,8 @@ const ExperienceEntry = ({ job }: { job: WorkExperience }) => (
 
 const ExperiencePage = () => {
   return (
-    <div className="py-16 md:py-24">
+    <div className="relative py-16 md:py-24">
+      {/*<DriftMeshCanvas />*/}
       <Container size="md">
         <div className="flex flex-col gap-2 mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tight">

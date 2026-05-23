@@ -3,6 +3,8 @@ import wandrlustImg from '../assets/project-images/wandrlust.png';
 import draftableImg from '../assets/project-images/draftables.png';
 import staryoImg from '../assets/project-images/staryo.png';
 import shopAssistImg from '../assets/project-images/shop-assist.png';
+import heyStreamImg from '../assets/project-images/hey-stream.jpg';
+import graffitiImg from '../assets/project-images/graffiti.jpg';
 
 export const profile: ProfileData = {
   personal: {
@@ -117,12 +119,14 @@ export const profile: ProfileData = {
           description:
             'Managed delivery coordination and cross-team reporting for a live streaming platform project.',
           tags: ['Streaming', 'Operations'],
+          image: heyStreamImg,
         },
         {
           name: 'Graffiti',
           description:
             'Oversaw project tracking and sprint reporting for a creative content platform.',
           tags: ['Content', 'Coordination'],
+          image: graffitiImg,
         },
       ],
     },
