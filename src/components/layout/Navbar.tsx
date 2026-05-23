@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ROUTES } from '../../router/routes';
 import Container from '../common/Container';
+import profileImage from '../../assets/profile-image.jpeg';
 
 const navLinks = [
   { to: ROUTES.HOME, label: 'Home' },
@@ -35,10 +36,12 @@ const Navbar = () => {
               className="flex items-center gap-3 group"
               aria-label="Go to home"
             >
-              <div className="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center shrink-0">
-                <span className="text-white text-xs font-semibold tracking-wide select-none">
-                  AN
-                </span>
+              <div className="w-9 h-9 rounded-full ring-2 ring-blue-600 shrink-0 overflow-hidden">
+                <img
+                  src={profileImage}
+                  alt="Anushika Nayomi"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <span className="hidden sm:block text-sm font-semibold text-white tracking-tight group-hover:opacity-70 transition-opacity">
                 Anushika Nayomi
