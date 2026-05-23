@@ -20,7 +20,10 @@ class GridParticle {
     this.z = z;
   }
 
-  project(width: number, height: number): { sx: number; sy: number; scale: number } | null {
+  project(
+    width: number,
+    height: number
+  ): { sx: number; sy: number; scale: number } | null {
     const scale = FOCAL_LENGTH / (FOCAL_LENGTH + this.z);
     if (scale <= 0) return null;
     return {
@@ -63,15 +66,16 @@ const MeshCanvas = ({ opacity = 0.38 }: MeshCanvasProps) => {
       ctx.clearRect(0, 0, width, height);
 
       // compute projected positions with wave applied
-      const projected: ({ sx: number; sy: number; scale: number } | null)[] = particles.map((p, idx) => {
-        const col = idx % COLS;
-        const row = Math.floor(idx / COLS);
-        const wave =
-          Math.sin(time * 0.0004 + col * 0.25) * 18 +
-          Math.cos(time * 0.0003 + row * 0.3) * 12;
-        const waved = new GridParticle(p.x, p.y + wave, p.z);
-        return waved.project(width, height);
-      });
+      const projected: ({ sx: number; sy: number; scale: number } | null)[] =
+        particles.map((p, idx) => {
+          const col = idx % COLS;
+          const row = Math.floor(idx / COLS);
+          const wave =
+            Math.sin(time * 0.0004 + col * 0.25) * 18 +
+            Math.cos(time * 0.0003 + row * 0.3) * 12;
+          const waved = new GridParticle(p.x, p.y + wave, p.z);
+          return waved.project(width, height);
+        });
 
       // draw horizontal lines
       for (let i = 0; i < ROWS; i++) {
@@ -135,7 +139,14 @@ const MeshCanvas = ({ opacity = 0.38 }: MeshCanvasProps) => {
   return (
     <canvas
       ref={canvasRef}
-      style={{ position: 'fixed', bottom: 0, left: 0, right: 0, pointerEvents: 'none', zIndex: 0 }}
+      style={{
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        pointerEvents: 'none',
+        zIndex: 0,
+      }}
     />
   );
 };

@@ -103,7 +103,14 @@ const DriftMeshCanvas = ({ opacity = 0.18 }: DriftMeshCanvasProps) => {
   return (
     <canvas
       ref={canvasRef}
-      style={{ position: 'fixed', bottom: 0, left: 0, right: 0, pointerEvents: 'none', zIndex: 0 }}
+      style={{
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        pointerEvents: 'none',
+        zIndex: 0,
+      }}
     />
   );
 };
