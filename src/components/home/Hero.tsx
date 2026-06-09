@@ -15,16 +15,14 @@ const Hero = ({ personal }: HeroProps) => {
       style={{ height: 'calc(100dvh - 64px)' }}
     >
       {/* Mobile/tablet: centered background image */}
-      <img
-        src={centeredHero}
-        alt={personal.name}
-        className="lg:hidden absolute inset-0 w-full h-full object-cover object-center"
+      <div
+        className="lg:hidden absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${centeredHero})` }}
       />
       {/* Desktop: right-aligned background image */}
-      <img
-        src={rightHero}
-        alt={personal.name}
-        className="hidden lg:block absolute inset-0 w-full h-full object-cover object-center"
+      <div
+        className="hidden lg:block absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${rightHero})` }}
       />
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/60 lg:bg-black/30" />
