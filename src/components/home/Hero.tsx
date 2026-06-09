@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import type { PersonalInfo } from '../../types';
@@ -16,6 +17,11 @@ const item = (delay: number) => ({
 });
 
 const Hero = ({ personal }: HeroProps) => {
+  const [ready, setReady] = useState(false);
+
+  const isMobile = window.innerWidth < 1024;
+  const handleLoad = () => setReady(true);
+
   return (
     <section
       className="relative w-full border-b border-neutral-800 flex items-center overflow-hidden"
@@ -27,6 +33,7 @@ const Hero = ({ personal }: HeroProps) => {
         alt={personal.name}
         className="lg:hidden absolute inset-0 w-full h-full object-cover object-center"
         style={{ transform: 'translateZ(0)' }}
+        onLoad={isMobile ? handleLoad : undefined}
       />
       {/* Desktop: right-aligned background image */}
       <img
@@ -34,6 +41,7 @@ const Hero = ({ personal }: HeroProps) => {
         alt={personal.name}
         className="hidden lg:block absolute inset-0 w-full h-full object-cover object-center"
         style={{ transform: 'translateZ(0)' }}
+        onLoad={!isMobile ? handleLoad : undefined}
       />
       {/* Dark overlay */}
       <div
@@ -47,12 +55,30 @@ const Hero = ({ personal }: HeroProps) => {
             <motion.h1
               className="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight"
               {...item(0)}
+              animate={
+                ready
+                  ? {
+                      opacity: 1,
+                      y: 0,
+                      transition: { delay: 0, duration: 0.65 },
+                    }
+                  : { opacity: 0, y: 20 }
+              }
             >
               {personal.name}
             </motion.h1>
             <motion.p
               className="text-lg md:text-xl text-blue-400 font-medium"
               {...item(0.15)}
+              animate={
+                ready
+                  ? {
+                      opacity: 1,
+                      y: 0,
+                      transition: { delay: 0.15, duration: 0.65 },
+                    }
+                  : { opacity: 0, y: 20 }
+              }
             >
               {personal.tagline}
             </motion.p>
@@ -61,11 +87,32 @@ const Hero = ({ personal }: HeroProps) => {
           <motion.p
             className="text-sm text-neutral-400 leading-relaxed max-w-xl"
             {...item(0.3)}
+            animate={
+              ready
+                ? {
+                    opacity: 1,
+                    y: 0,
+                    transition: { delay: 0.3, duration: 0.65 },
+                  }
+                : { opacity: 0, y: 20 }
+            }
           >
             {personal.bio}
           </motion.p>
 
-          <motion.div className="flex flex-wrap gap-3 pt-2" {...item(0.45)}>
+          <motion.div
+            className="flex flex-wrap gap-3 pt-2"
+            {...item(0.45)}
+            animate={
+              ready
+                ? {
+                    opacity: 1,
+                    y: 0,
+                    transition: { delay: 0.45, duration: 0.65 },
+                  }
+                : { opacity: 0, y: 20 }
+            }
+          >
             <Link
               to={ROUTES.CONTACT}
               className="px-5 py-2.5 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors"
@@ -80,7 +127,19 @@ const Hero = ({ personal }: HeroProps) => {
             </Link>
           </motion.div>
 
-          <motion.div className="flex items-center gap-4 pt-1" {...item(0.6)}>
+          <motion.div
+            className="flex items-center gap-4 pt-1"
+            {...item(0.6)}
+            animate={
+              ready
+                ? {
+                    opacity: 1,
+                    y: 0,
+                    transition: { delay: 0.6, duration: 0.65 },
+                  }
+                : { opacity: 0, y: 20 }
+            }
+          >
             {personal.social.map(link => (
               <a
                 key={link.label}
