@@ -1,6 +1,4 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import type { PersonalInfo } from '../../types';
 import { ROUTES } from '../../router/routes';
 import centeredHero from '../../assets/hero-images/centered-hero.jpeg';
@@ -10,18 +8,7 @@ interface HeroProps {
   personal: PersonalInfo;
 }
 
-const item = (delay: number) => ({
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0, transition: { delay, duration: 0.65 } },
-  style: { willChange: 'opacity, transform' },
-});
-
 const Hero = ({ personal }: HeroProps) => {
-  const [ready, setReady] = useState(false);
-
-  const isMobile = window.innerWidth < 1024;
-  const handleLoad = () => setReady(true);
-
   return (
     <section
       className="relative w-full border-b border-neutral-800 flex items-center overflow-hidden"
@@ -32,87 +19,32 @@ const Hero = ({ personal }: HeroProps) => {
         src={centeredHero}
         alt={personal.name}
         className="lg:hidden absolute inset-0 w-full h-full object-cover object-center"
-        style={{ transform: 'translateZ(0)' }}
-        onLoad={isMobile ? handleLoad : undefined}
       />
       {/* Desktop: right-aligned background image */}
       <img
         src={rightHero}
         alt={personal.name}
         className="hidden lg:block absolute inset-0 w-full h-full object-cover object-center"
-        style={{ transform: 'translateZ(0)' }}
-        onLoad={!isMobile ? handleLoad : undefined}
       />
       {/* Dark overlay */}
-      <div
-        className="absolute inset-0 bg-black/60 lg:bg-black/30"
-        style={{ transform: 'translateZ(0)' }}
-      />
+      <div className="absolute inset-0 bg-black/60 lg:bg-black/30" />
 
       <div className="relative mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-[1280px]">
         <div className="flex flex-col gap-6 max-w-2xl">
           <div className="flex flex-col gap-3">
-            <motion.h1
-              className="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight"
-              {...item(0)}
-              animate={
-                ready
-                  ? {
-                      opacity: 1,
-                      y: 0,
-                      transition: { delay: 0, duration: 0.65 },
-                    }
-                  : { opacity: 0, y: 20 }
-              }
-            >
+            <h1 className="animate-fade-up text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">
               {personal.name}
-            </motion.h1>
-            <motion.p
-              className="text-lg md:text-xl text-blue-400 font-medium"
-              {...item(0.15)}
-              animate={
-                ready
-                  ? {
-                      opacity: 1,
-                      y: 0,
-                      transition: { delay: 0.15, duration: 0.65 },
-                    }
-                  : { opacity: 0, y: 20 }
-              }
-            >
+            </h1>
+            <p className="animate-fade-up animation-delay-150 text-lg md:text-xl text-blue-400 font-medium">
               {personal.tagline}
-            </motion.p>
+            </p>
           </div>
 
-          <motion.p
-            className="text-sm text-neutral-400 leading-relaxed max-w-xl"
-            {...item(0.3)}
-            animate={
-              ready
-                ? {
-                    opacity: 1,
-                    y: 0,
-                    transition: { delay: 0.3, duration: 0.65 },
-                  }
-                : { opacity: 0, y: 20 }
-            }
-          >
+          <p className="animate-fade-up animation-delay-300 text-sm text-neutral-400 leading-relaxed max-w-xl">
             {personal.bio}
-          </motion.p>
+          </p>
 
-          <motion.div
-            className="flex flex-wrap gap-3 pt-2"
-            {...item(0.45)}
-            animate={
-              ready
-                ? {
-                    opacity: 1,
-                    y: 0,
-                    transition: { delay: 0.45, duration: 0.65 },
-                  }
-                : { opacity: 0, y: 20 }
-            }
-          >
+          <div className="animate-fade-up animation-delay-450 flex flex-wrap gap-3 pt-2">
             <Link
               to={ROUTES.CONTACT}
               className="px-5 py-2.5 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors"
@@ -125,21 +57,9 @@ const Hero = ({ personal }: HeroProps) => {
             >
               View Resume
             </Link>
-          </motion.div>
+          </div>
 
-          <motion.div
-            className="flex items-center gap-4 pt-1"
-            {...item(0.6)}
-            animate={
-              ready
-                ? {
-                    opacity: 1,
-                    y: 0,
-                    transition: { delay: 0.6, duration: 0.65 },
-                  }
-                : { opacity: 0, y: 20 }
-            }
-          >
+          <div className="animate-fade-up animation-delay-600 flex items-center gap-4 pt-1">
             {personal.social.map(link => (
               <a
                 key={link.label}
@@ -151,7 +71,7 @@ const Hero = ({ personal }: HeroProps) => {
                 {link.label}
               </a>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
