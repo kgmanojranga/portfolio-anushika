@@ -59,10 +59,7 @@ const Hero = ({ personal }: HeroProps) => {
             {personal.bio}
           </motion.p>
 
-          <motion.div
-            className="flex flex-wrap gap-3 pt-2"
-            {...item(0.45)}
-          >
+          <motion.div className="flex flex-wrap gap-3 pt-2" {...item(0.45)}>
             <Link
               to={ROUTES.CONTACT}
               className="px-5 py-2.5 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors"
@@ -77,10 +74,7 @@ const Hero = ({ personal }: HeroProps) => {
             </Link>
           </motion.div>
 
-          <motion.div
-            className="flex items-center gap-4 pt-1"
-            {...item(0.6)}
-          >
+          <motion.div className="flex items-center gap-4 pt-1" {...item(0.6)}>
             {personal.social.map(link => (
               <a
                 key={link.label}
