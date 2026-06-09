@@ -36,7 +36,10 @@ const Hero = ({ personal }: HeroProps) => {
         style={{ transform: 'translateZ(0)' }}
       />
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/60 lg:bg-black/30" style={{ transform: 'translateZ(0)' }} />
+      <div
+        className="absolute inset-0 bg-black/60 lg:bg-black/30"
+        style={{ transform: 'translateZ(0)' }}
+      />
 
       <div className="relative mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-[1280px]">
         <div className="flex flex-col gap-6 max-w-2xl">
