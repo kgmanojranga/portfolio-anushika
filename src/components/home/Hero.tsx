@@ -10,8 +10,9 @@ interface HeroProps {
 }
 
 const item = (delay: number) => ({
-  initial: { opacity: 0, y: 28 },
+  initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0, transition: { delay, duration: 0.65 } },
+  style: { willChange: 'opacity, transform' },
 });
 
 const Hero = ({ personal }: HeroProps) => {
@@ -25,15 +26,17 @@ const Hero = ({ personal }: HeroProps) => {
         src={centeredHero}
         alt={personal.name}
         className="lg:hidden absolute inset-0 w-full h-full object-cover object-center"
+        style={{ transform: 'translateZ(0)' }}
       />
       {/* Desktop: right-aligned background image */}
       <img
         src={rightHero}
         alt={personal.name}
         className="hidden lg:block absolute inset-0 w-full h-full object-cover object-center"
+        style={{ transform: 'translateZ(0)' }}
       />
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/60 lg:bg-black/30" />
+      <div className="absolute inset-0 bg-black/60 lg:bg-black/30" style={{ transform: 'translateZ(0)' }} />
 
       <div className="relative mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-[1280px]">
         <div className="flex flex-col gap-6 max-w-2xl">
